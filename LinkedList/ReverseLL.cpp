@@ -7,55 +7,48 @@ public:
     Node* next;
 };
 
-class LinkedList{
-    Node* head=NULL;
-  public:
+void push(Node** head,int newData){
+    Node* new_node= new Node();
+    new_node->data=newData;
+    new_node->next=(*head);
+    (*head)=new_node;
+}
 
+void reverse( Node** head_ref){
+    Node* temp = NULL;
+    Node* prev = NULL;
+    Node* curr = (*head_ref);
 
-    void reverse(){
-        Node* current=NULL;
-        Node* prev=NULL, *next=NULL;
-
-        while(current!=NULL) {
-            next = current->next;
-            current->next=prev;
-
-            prev=current;
-            current=next;
-
-        }
+    while(curr!= NULL){
+        temp = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = temp;
     }
-      void print()
-    {
-        struct Node* temp = head;
-        while (temp != NULL) {
-            cout << temp->data << " ";
-            temp = temp->next;
-        }
+    (*head_ref) = prev;
+}
+
+void printList(Node* n){
+    while(n!=NULL){
+        cout<<n->data<<" ";
+        n=n->next;
     }
- 
-    void push(int data)
-    {
-        Node* temp = new Node();
-        temp->next = head;
-        head = temp;
-    }
-    
-};
+}
 
 int main(){
-    LinkedList ll;
-    ll.push(20);
-    ll.push(4);
-    ll.push(15);
-    ll.push(85);
+    Node* head = NULL;
+    
+    push(&head,20);
+    push(&head,4);
+    push(&head,15);
+    push(&head,85);
  
     cout << "Given linked list\n";
-    ll.print();
+    printList(head);
  
-    ll.reverse();
+    reverse(&head);
  
     cout << "\nReversed linked list \n";
-    ll.print();
+    printList(head);
     return 0;
 }
