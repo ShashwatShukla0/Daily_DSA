@@ -15,8 +15,8 @@ int main() {
 
         if(currSum==sum) {
             cout<<"Sum found at index: "<<i<<endl;
-            return 1;
-        } else {
+        }
+        else {
             for(int j=i+1;j<n;j++){
                 currSum+= arr[j];
 
