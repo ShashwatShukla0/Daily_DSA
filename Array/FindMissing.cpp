@@ -18,7 +18,7 @@ int main(){
     for(int i=0;i<n;i++){
         temp[arr[i]-1]=1;
     }
-    int ans;
+    int ans=0;
     for(int i=0;i<n;i++){
         while (temp[i]==0)
         {
