@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int Rvalue(char r){
+int Rvalue(char r) {
     if(r=='I'){
         return 1;
     }
@@ -26,7 +26,7 @@ int Rvalue(char r){
     return -1;
 }
 
-int romanToDec(string str){
+int romanToDec(string str) {
     int res=0;
     int s1,s2;
 
@@ -47,8 +47,8 @@ int romanToDec(string str){
     else {
         res=res+s1;
     }
-    }
-    return res;
+ }
+  return res;
 }
 
 int main()
