@@ -21,11 +21,25 @@ void deleteBegin( Node** head) {
     free(temp);
 }
 
+void deleteLast( Node** head){
+    Node* new_node = new Node();
+    Node* end = (*head);
+    Node* prev = NULL;
+
+    while(end->next) {
+        prev = end;
+        end = end->next;
+    }
+    prev->next=NULL;
+    free(end);
+}
+
 void printList(Node* n) {
     while(n!=NULL) {
         cout<<n->data<<" ";
         n= n->next;
     }
+    cout<<endl;
 }
 
 int main() {
@@ -45,7 +59,12 @@ int main() {
     printList(head);
 
     deleteBegin(&head);
-    cout<<endl;
+    
+    cout<<"AFter deletion from begin: "<<endl;
+    printList(head);
+
+    cout<<"After deletion from end: "<<endl;
+    deleteLast(&head);
     printList(head);
 
     
