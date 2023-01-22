@@ -19,6 +19,7 @@ int main() {
         }
          if(i==j){
             cout<<arr[i]<<" ";
+            cout<<endl;
         }
         
     }
