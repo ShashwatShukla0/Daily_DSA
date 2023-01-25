@@ -3,11 +3,11 @@ using namespace std;
 
 int main() {
     vector<int> arr;
-    arr.push_back(3);
-    arr.push_back(4);
-    arr.push_back(5);
-    arr.push_back(6);
-    arr.push_back(7);
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        arr.push_back(i);
+    }
 
     for(int i=0;i<arr.size();i++){
         cout<<arr[i]<<" ";
